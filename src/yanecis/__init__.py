@@ -30,6 +30,8 @@ class Element:
         return self.variable_number
     def contribute(self,*args):
         self._contribute(*args)
+    def _contribute(self,*args):
+        raise NotImplementedError
         
 class Diode(Element):
     def __init__(self,n1,n2):
@@ -103,7 +105,8 @@ class Circuit:
         self.elements:List[Element]=[Ground()]
     def add(self,el):
         self.elements.append(el)
-    def simulate(self):
+    def op(self):
+        """Compute the Operationg Point"""
         nodes=set()
         for el in self.elements:
             nodes=nodes.union(el.get_nodes())

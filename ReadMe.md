@@ -22,6 +22,6 @@ cir.add(R1)
 cir.add(R2)
 cir.add(R3)
 
-cir.simulate()
+cir.op()
 ```
 

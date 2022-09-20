@@ -14,7 +14,7 @@ cir.add(R1)
 cir.add(R2)
 cir.add(I1)
 
-cir.simulate()
+cir.op()
 # print solution
 
 

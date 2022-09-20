@@ -9,7 +9,7 @@ pip install -e git+https://github.com/hkinke/yanecis.git#egg=yanecis
 ## Example Circuit
 
 ```python
-from yacis import Resistor,Voltage,Circuit
+from yanecis import Resistor,Voltage,Circuit
 
 V1=Voltage(1,0,1)
 R1=Resistor(1,2,1)

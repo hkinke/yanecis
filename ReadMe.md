@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-pip install git+https://github.com/hkinke/yanecis.git
+pip install -e git+https://github.com/hkinke/yanecis.git#egg=yanecis
 ```
 
 ## Example Circuit

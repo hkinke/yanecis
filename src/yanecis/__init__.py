@@ -106,7 +106,7 @@ class Circuit:
     def add(self,el):
         self.elements.append(el)
     def op(self):
-        """Compute the Operationg Point"""
+        """Compute the Operating Point"""
         nodes=set()
         for el in self.elements:
             nodes=nodes.union(el.get_nodes())

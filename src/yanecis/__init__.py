@@ -63,8 +63,8 @@ class Resistor(Element):
         A[n2,n2]+=1/self.value
         A[n2,n1]+=-1/self.value
 
-# miss current contribution
 class Voltage(Element):
+    """Voltage Source"""
     def __init__(self,n1,n2,value):
         super(Voltage,self).__init__([n1,n2],1,1)
         self.value=value
@@ -79,8 +79,8 @@ class Voltage(Element):
         A[eq,n2]=-1
         b[eq,0]=self.value
 
-# miss current contribution
 class Ground(Element):
+    """Each circuit must contain at least one ground."""
     def __init__(self):
         super(Ground,self).__init__([0],1)
     def _contribute(self,A,b,x,node_dict):
@@ -90,6 +90,7 @@ class Ground(Element):
         b[eq,0]=0.0
 
 class Current(Element):
+    """Current Source"""
     def __init__(self,n1,n2,value):
         super(Current,self).__init__([n1,n2])
         self.value=value
@@ -144,7 +145,7 @@ class Circuit:
         A=np.zeros((number_equations,number_variables))
         b=np.zeros((number_equations,1))
 
-        # operating point
+        # initial operating point
         x0=np.zeros((number_variables,1))
 
         done = False
@@ -163,4 +164,4 @@ class Circuit:
         reverse_node_dict={v:k for k,v in node_dict.items()}
 
         for i in range(number_nodes):
-            print(f"node{reverse_node_dict[i]}: {x[i,0]}")
+            print(f"node{reverse_node_dict[i]}: {x[i,0]} Volts")
